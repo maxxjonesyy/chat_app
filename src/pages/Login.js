@@ -19,7 +19,7 @@ const Login = () => {
 
   return (
     <div>
-      <button onClick={googleSignIn}>Auth with Google</button>
+      <button onClick={googleSignIn}>Login</button>
     </div>
   );
 };
