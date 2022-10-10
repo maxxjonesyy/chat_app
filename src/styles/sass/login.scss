@@ -1,0 +1,17 @@
+@import "./mixins.scss";
+@import "./theme.scss";
+
+#login {
+  height: 100vh;
+  width: 100vw;
+  @include flexCenter;
+}
+
+.login-btn {
+  border: none;
+  background: transparent;
+  border-bottom: 1.5px solid black;
+  font-size: $xlarge;
+  cursor: pointer;
+  @include Loadfont;
+}

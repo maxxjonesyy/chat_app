@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
 import { LoginContext } from "../logic/context";
 import { auth, provider, signInWithPopup } from "../firebase";
+import "../styles/sass/login.scss";
 
 const Login = () => {
   const { setUser } = useContext(LoginContext);
@@ -18,8 +18,10 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <button onClick={googleSignIn}>Login</button>
+    <div id="login">
+      <button className="login-btn" onClick={googleSignIn}>
+        Login
+      </button>
     </div>
   );
 };

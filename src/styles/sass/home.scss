@@ -1,0 +1,44 @@
+@import "./theme.scss";
+@import "./mixins.scss";
+
+#sidebar {
+  @include Loadfont;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 100vh;
+  background-color: $backgroundLight;
+}
+
+.sidebar__header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: $background;
+}
+
+.sidebar__header {
+  color: $textLight;
+}
+
+.sidebar__add-channel {
+  color: $textLight;
+
+  :hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.sidebar__channels {
+  padding: 15px 0px 0px 15px;
+}
+
+.sidebar__channel {
+  color: $text;
+}
+
+.sidebar__hash {
+  padding: 0px 5px 0px 0px;
+  color: $text;
+}

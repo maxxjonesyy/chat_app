@@ -1,0 +1,22 @@
+@import "../sass/theme.scss";
+
+// Layout
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenterVertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@mixin Loadfont {
+  font-family: "Poppins", sans-serif;
+}
