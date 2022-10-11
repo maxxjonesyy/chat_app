@@ -2,16 +2,14 @@
 @import "./theme.scss";
 
 #login {
-  height: 100vh;
-  width: 100vw;
+  height: 97vh;
+  width: 97vw;
   @include flexCenter;
+  overflow: none;
 }
 
 .login-btn {
-  border: none;
-  background: transparent;
-  border-bottom: 1.5px solid black;
-  font-size: $xlarge;
-  cursor: pointer;
-  @include Loadfont;
+  background-color: $backgroundLight !important;
+  width: 250px !important;
+  height: 40px !important;
 }
