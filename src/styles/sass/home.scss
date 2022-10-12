@@ -2,6 +2,7 @@
 @import "./mixins.scss";
 
 #sidebar {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 275px;
@@ -64,4 +65,63 @@
   &:hover {
     color: white;
   }
+}
+
+.user__container {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  @include padding;
+  background-color: $background;
+}
+
+.user__container-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user__image {
+  width: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px 5px $backgroundLight;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
+.user__container-col {
+  @include flexCenterVertical;
+}
+
+.user__name {
+  color: $textLight;
+}
+
+.user__id {
+  color: $text;
+}
+
+.logout__container {
+  @include flexCenterVertical;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    transform: scale(1.1);
+  }
+}
+
+.logout__icon {
+  transform: rotate(-180deg);
+  color: $text;
+}
+
+.logout__text {
+  color: $text;
+  font-size: 14px;
 }

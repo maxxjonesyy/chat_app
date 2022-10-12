@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { db } from "../firebase";
 import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import { LoginContext } from "../logic/context";
 import "../styles/sass/home.scss";
 import AddIcon from "@mui/icons-material/Add";
 import ChatIcon from "@mui/icons-material/Chat";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const Sidebar = () => {
   const colRef = collection(db, "channels");
   const [channels, setChannels] = useState([]);
+  const { user, setUser } = useContext(LoginContext);
 
-  let channelName = "";
+  const signOutUser = () => {
+    setUser(undefined);
+  };
+
   const addChannel = () => {
-    channelName = prompt("Enter a Channel name");
+    let channelName = prompt("Enter a Channel name");
     if ((channelName !== null) & (channelName !== "")) {
       addDoc(colRef, {
         channelName,
@@ -47,7 +53,24 @@ const Sidebar = () => {
         ))}
       </div>
 
-      <div className='user-container'></div>
+      <div className='user__container'>
+        <div className='user__container-info'>
+          <img
+            className='user__image'
+            src={user.image}
+            alt='logged in user'
+            onClick={signOutUser}
+          />
+          <div className='user__container-col'>
+            <span className='user__name'>{user.name}</span>
+            <span className='user__id'>#{user.id}</span>
+          </div>
+          <div className='logout__container' onClick={signOutUser}>
+            <LogoutIcon className='logout__icon'></LogoutIcon>
+            <span className='logout__text'>Sign Out</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
