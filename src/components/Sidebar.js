@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
+import "../styles/sass/home.scss";
 import { db } from "../firebase";
 import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import { LoginContext } from "../logic/context";
-import "../styles/sass/home.scss";
 import AddIcon from "@mui/icons-material/Add";
 import ChatIcon from "@mui/icons-material/Chat";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -10,19 +10,27 @@ import LogoutIcon from "@mui/icons-material/Logout";
 const Sidebar = () => {
   const colRef = collection(db, "channels");
   const [channels, setChannels] = useState([]);
-  const { user, setUser } = useContext(LoginContext);
+  const { user, setUser, setActiveChannel } = useContext(LoginContext);
 
   const signOutUser = () => {
     setUser(undefined);
   };
 
+  const clickedChannel = (e) => {
+    setActiveChannel(e.target.innerHTML);
+  };
+
   const addChannel = () => {
-    let channelName = prompt("Enter a Channel name");
-    if ((channelName !== null) & (channelName !== "")) {
+    let channelName = prompt("Enter a Channel name less than 20 characters");
+    if (
+      (channelName !== null) &
+      (channelName !== "") &
+      (channelName.length <= 20)
+    ) {
       addDoc(colRef, {
         channelName,
       });
-    } else alert("You must enter a name to create a Channel");
+    } else alert("You must enter a valid Channel name");
   };
 
   useEffect(() => {
@@ -48,7 +56,9 @@ const Sidebar = () => {
             <span className='channels__icon'>
               <ChatIcon />
             </span>
-            <span className='channels__name'>{channel.channelName}</span>
+            <span className='channels__name' onClick={clickedChannel}>
+              {channel.channelName}
+            </span>
           </span>
         ))}
       </div>

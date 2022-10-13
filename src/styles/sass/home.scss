@@ -1,6 +1,10 @@
 @import "./theme.scss";
 @import "./mixins.scss";
 
+#home {
+  display: flex;
+}
+
 #sidebar {
   position: relative;
   display: flex;
@@ -8,6 +12,14 @@
   width: 275px;
   height: 100vh;
   background-color: $backgroundLight;
+}
+
+#header {
+  background-color: $background;
+  width: 100%;
+}
+
+#chat {
 }
 
 .sidebar__header-container {
@@ -124,4 +136,7 @@
 .logout__text {
   color: $text;
   font-size: 14px;
+}
+
+.header {
 }

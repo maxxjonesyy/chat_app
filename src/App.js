@@ -6,9 +6,12 @@ import "./styles/sass/app.scss";
 
 const App = () => {
   const [user, setUser] = useState();
+  const [activeChannel, setActiveChannel] = useState();
 
   return (
-    <LoginContext.Provider value={{ user, setUser }}>
+    <LoginContext.Provider
+      value={{ user, setUser, activeChannel, setActiveChannel }}
+    >
       {user !== undefined ? <Home /> : <Login />}
     </LoginContext.Provider>
   );
