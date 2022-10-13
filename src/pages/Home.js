@@ -5,10 +5,12 @@ import Chat from "../components/Chat";
 
 const Home = () => {
   return (
-    <div id="home">
+    <div id='home'>
       <Sidebar />
-      <Header />
-      <Chat />
+      <div className='home__flex-vertical'>
+        <Header />
+        <Chat />
+      </div>
     </div>
   );
 };

@@ -5,6 +5,12 @@
   display: flex;
 }
 
+.home__flex-vertical {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 #sidebar {
   position: relative;
   display: flex;
@@ -15,11 +21,15 @@
 }
 
 #header {
+  display: flex;
+  align-items: center;
   background-color: $background;
-  width: 100%;
 }
 
 #chat {
+  flex: 1;
+  @include padding;
+  background-color: $background;
 }
 
 .sidebar__header-container {
@@ -84,7 +94,8 @@
   width: 100%;
   bottom: 0;
   @include padding;
-  background-color: $background;
+  border-top: 4px solid $background;
+  background-color: $backgroundLight;
 }
 
 .user__container-info {
@@ -138,5 +149,45 @@
   font-size: 14px;
 }
 
-.header {
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @include padding;
+}
+
+.active-channel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.active-channel__icon {
+  font-size: $large;
+  color: $text;
+}
+
+.active-channel__name {
+  font-size: $large;
+  color: white;
+}
+
+.search-help__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-help__search {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: $backgroundLight;
+  caret-color: white;
+  color: white;
+}
+
+.search-help__help {
+  color: rgb(129, 129, 129);
 }

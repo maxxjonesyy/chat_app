@@ -6,7 +6,7 @@ import "./styles/sass/app.scss";
 
 const App = () => {
   const [user, setUser] = useState();
-  const [activeChannel, setActiveChannel] = useState();
+  const [activeChannel, setActiveChannel] = useState("Rules");
 
   return (
     <LoginContext.Provider
