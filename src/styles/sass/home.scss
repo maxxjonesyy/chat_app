@@ -26,9 +26,12 @@
   background-color: $background;
 }
 
-#chat {
+#messages {
   flex: 1;
-  @include padding;
+  background-color: $background;
+}
+
+#chat {
   background-color: $background;
 }
 
@@ -62,6 +65,11 @@
   }
 }
 
+.channels__container {
+  flex: 1;
+  overflow-x: hidden;
+}
+
 .channels {
   @include padding;
 }
@@ -70,7 +78,6 @@
   color: $text;
   font-size: $medium;
   display: flex;
-
   gap: 15px;
   margin: 0px 0px 15px 0px;
 }
@@ -90,10 +97,9 @@
 }
 
 .user__container {
-  position: absolute;
   width: 100%;
   bottom: 0;
-  @include padding;
+  @include paddingContainer;
   border-top: 4px solid $background;
   background-color: $backgroundLight;
 }
@@ -117,7 +123,9 @@
 }
 
 .user__container-col {
-  @include flexCenterVertical;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .user__name {
@@ -190,4 +198,19 @@
 
 .search-help__help {
   color: rgb(129, 129, 129);
+}
+
+.chat__container {
+  margin: 30px;
+}
+
+.chat__input {
+  width: 100%;
+  padding: 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: $backgroundLight;
+  caret-color: white;
+  color: white;
 }

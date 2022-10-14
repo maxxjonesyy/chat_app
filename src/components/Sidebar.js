@@ -50,17 +50,19 @@ const Sidebar = () => {
         <AddIcon className='addChannel__add' onClick={addChannel} />
       </div>
 
-      <div className='channels'>
-        {channels.map((channel, id) => (
-          <span className='channels__channel' key={id}>
-            <span className='channels__icon'>
-              <ChatIcon />
+      <div className='channels__container'>
+        <div className='channels'>
+          {channels.map((channel, id) => (
+            <span className='channels__channel' key={id}>
+              <span className='channels__icon'>
+                <ChatIcon />
+              </span>
+              <span className='channels__name' onClick={clickedChannel}>
+                {channel.channelName}
+              </span>
             </span>
-            <span className='channels__name' onClick={clickedChannel}>
-              {channel.channelName}
-            </span>
-          </span>
-        ))}
+          ))}
+        </div>
       </div>
 
       <div className='user__container'>

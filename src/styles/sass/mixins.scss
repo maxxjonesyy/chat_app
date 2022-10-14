@@ -18,6 +18,14 @@
   padding: 15px;
 }
 
+@mixin paddingChat {
+  padding: 50px;
+}
+
+@mixin paddingContainer {
+  padding: 30px 15px 30px 15px;
+}
+
 // Font
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
