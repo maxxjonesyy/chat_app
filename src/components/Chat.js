@@ -2,9 +2,18 @@ import React, { useContext } from "react";
 import { DataContext } from "../logic/context";
 import { db } from "../firebase";
 import { addDoc, collection } from "firebase/firestore";
+import EmojiPicker from "emoji-picker-react";
+import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 const Chat = () => {
   const { user, activeChannel } = useContext(DataContext);
+
+  const handleEmojiPopup = () => {
+    const popUp = document.querySelector(".emoji__container");
+    popUp.classList.contains("hide")
+      ? popUp.classList.remove("hide")
+      : popUp.classList.add("hide");
+  };
 
   const handleKeyDown = (e) => {
     let message = e.target.value;
@@ -32,6 +41,10 @@ const Chat = () => {
           placeholder="Message"
           onKeyDown={handleKeyDown}
         />
+        <div className="emoji__container hide">
+          <EmojiPicker />
+        </div>
+        <EmojiEmotionsIcon className="emoji__icon" onClick={handleEmojiPopup} />
       </div>
     </div>
   );

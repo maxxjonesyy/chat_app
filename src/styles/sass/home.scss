@@ -201,18 +201,41 @@
 }
 
 .chat__container {
+  position: relative;
+  display: flex;
+  align-items: center;
   margin: 30px;
+  border-radius: 5px;
+  background-color: $backgroundLight;
 }
 
 .chat__input {
   width: 100%;
   padding: 25px;
   border: none;
-  border-radius: 5px;
   font-size: 18px;
-  background-color: $backgroundLight;
+  background-color: transparent;
   caret-color: white;
   color: white;
+}
+
+.emoji__icon {
+  color: $text;
+  margin: 0 10px 0 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.emoji__container {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+}
+
+.hide {
+  display: none;
 }
 
 .message__info {
