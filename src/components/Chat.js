@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { DataContext } from "../logic/context";
 import { db } from "../firebase";
 import { addDoc, collection } from "firebase/firestore";
-import EmojiPicker from "emoji-picker-react";
+import EmojiPicker, { Emoji } from "emoji-picker-react";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 const Chat = () => {
@@ -42,7 +42,13 @@ const Chat = () => {
           onKeyDown={handleKeyDown}
         />
         <div className="emoji__container hide">
-          <EmojiPicker />
+          <EmojiPicker
+            theme="dark"
+            onEmojiClick={(res) => {
+              const chatInput = document.querySelector(".chat__input");
+              chatInput.value = chatInput.value + `${res.emoji}`;
+            }}
+          />
         </div>
         <EmojiEmotionsIcon className="emoji__icon" onClick={handleEmojiPopup} />
       </div>
