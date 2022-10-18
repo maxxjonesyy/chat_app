@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { LoginContext } from "../logic/context";
+import { DataContext } from "../logic/context";
 import { auth, provider, signInWithPopup } from "../firebase";
 import "../styles/sass/login.scss";
 import Button from "@mui/material/Button";
 
 const Login = () => {
-  const { setUser } = useContext(LoginContext);
+  const { setUser } = useContext(DataContext);
 
   const googleSignIn = () => {
     signInWithPopup(auth, provider).then((response) =>
@@ -19,8 +19,8 @@ const Login = () => {
   };
 
   return (
-    <div id='login'>
-      <Button className='login-btn' variant='contained' onClick={googleSignIn}>
+    <div id="login">
+      <Button className="login-btn" variant="contained" onClick={googleSignIn}>
         Login
       </Button>
     </div>

@@ -6,9 +6,9 @@ import Messages from "../components/Messages";
 
 const Home = () => {
   return (
-    <div id='home'>
+    <div id="home">
       <Sidebar />
-      <div className='home__flex-vertical'>
+      <div className="home__flex-vertical">
         <Header />
         <Messages />
         <Chat />
