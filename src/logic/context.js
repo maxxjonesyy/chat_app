@@ -1,6 +1,5 @@
 import { createContext } from "react";
 
-const LoginContext = createContext({});
-const ChannelContext = createContext();
+const DataContext = createContext({});
 
-export { LoginContext, ChannelContext };
+export { DataContext };
