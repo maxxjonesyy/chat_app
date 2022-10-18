@@ -186,18 +186,12 @@
   gap: 10px;
 }
 
-.search-help__search {
-  width: 180px;
-  padding: 8px;
-  border: none;
-  border-radius: 5px;
-  background-color: $backgroundLight;
-  caret-color: white;
-  color: white;
-}
-
-.search-help__help {
+.help {
   color: rgb(129, 129, 129);
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .chat__container {

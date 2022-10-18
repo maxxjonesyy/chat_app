@@ -16,13 +16,8 @@ const Header = () => {
           <span className="active-channel__name">{activeChannel}</span>
         </span>
 
-        <div className="search-help__container">
-          <input
-            className="search-help__search"
-            type="text"
-            placeholder="Search"
-          />
-          <div className="search-help__help">
+        <div className="help__container">
+          <div className="help">
             <HelpIcon />
           </div>
         </div>
