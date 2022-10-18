@@ -1,28 +1,28 @@
 import React, { useContext } from "react";
-import { LoginContext } from "../logic/context";
+import { DataContext } from "../logic/context";
 import ChatIcon from "@mui/icons-material/Chat";
 import HelpIcon from "@mui/icons-material/Help";
 
 const Header = () => {
-  const { activeChannel } = useContext(LoginContext);
+  const { activeChannel } = useContext(DataContext);
 
   return (
-    <div id='header'>
-      <div className='header__container'>
-        <span className='active-channel'>
-          <span className='active-channel__icon'>
+    <div id="header">
+      <div className="header__container">
+        <span className="active-channel">
+          <span className="active-channel__icon">
             <ChatIcon />
           </span>
-          <span className='active-channel__name'>{activeChannel}</span>
+          <span className="active-channel__name">{activeChannel}</span>
         </span>
 
-        <div className='search-help__container'>
+        <div className="search-help__container">
           <input
-            className='search-help__search'
-            type='text'
-            placeholder='Search'
+            className="search-help__search"
+            type="text"
+            placeholder="Search"
           />
-          <div className='search-help__help'>
+          <div className="search-help__help">
             <HelpIcon />
           </div>
         </div>
