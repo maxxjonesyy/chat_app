@@ -9,8 +9,14 @@ import LogoutIcon from "@mui/icons-material/Logout";
 
 const Sidebar = () => {
   const colRef = collection(db, "channels");
-  const { user, setUser, channels, setChannels, setActiveChannel } =
-    useContext(DataContext);
+  const {
+    user,
+    setUser,
+    channels,
+    setChannels,
+    activeChannel,
+    setActiveChannel,
+  } = useContext(DataContext);
 
   const signOutUser = () => {
     setUser(undefined);
@@ -30,7 +36,9 @@ const Sidebar = () => {
       setDoc(doc(db, "channels", channelName), {
         channelName,
         createdBy: user.name,
-        createdDate: new Date(),
+        createdDate: new Date().toLocaleString("en-US", {
+          timeZone: "Australia/Sydney",
+        }),
       });
     } else alert("You must enter a valid Channel name");
   };
