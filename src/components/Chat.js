@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { DataContext } from "../logic/context";
 import { db } from "../firebase";
 import { addDoc, collection } from "firebase/firestore";
-import EmojiPicker, { Emoji } from "emoji-picker-react";
+import EmojiPicker from "emoji-picker-react";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 
 const Chat = () => {

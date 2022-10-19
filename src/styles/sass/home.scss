@@ -180,18 +180,47 @@
   color: white;
 }
 
-.search-help__container {
+.channel-help__container {
+  position: relative;
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
 }
 
-.help {
+.channel-help__icon {
   color: rgb(129, 129, 129);
 
   &:hover {
     cursor: pointer;
   }
+}
+
+.channel-help__modal {
+  position: absolute;
+  background-color: $backgroundLight;
+  width: 250px;
+  height: 250px;
+  right: 0;
+  top: 30px;
+  border-radius: 5px;
+  z-index: 4;
+}
+
+.channel-help__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: $text;
+  text-align: center;
+  font-size: 18px;
+}
+
+.channel-help__data {
+  color: white;
+  font-size: 18px;
 }
 
 .chat__container {
@@ -226,6 +255,10 @@
   position: absolute;
   bottom: 80px;
   right: 0;
+}
+
+.epr-skin-tones {
+  display: none !important;
 }
 
 .hide {
