@@ -300,4 +300,11 @@
   padding-top: 5px;
   color: white;
   word-break: break-all;
+  display: inherit;
+}
+
+.message__messageImage {
+  max-width: 100%;
+  display: inherit;
+  padding-top: 5px;
 }
