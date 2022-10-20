@@ -9,14 +9,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 
 const Sidebar = () => {
   const colRef = collection(db, "channels");
-  const {
-    user,
-    setUser,
-    channels,
-    setChannels,
-    activeChannel,
-    setActiveChannel,
-  } = useContext(DataContext);
+  const { user, setUser, channels, setChannels, setActiveChannel } =
+    useContext(DataContext);
 
   const signOutUser = () => {
     setUser(undefined);
@@ -42,6 +36,17 @@ const Sidebar = () => {
       });
     } else alert("You must enter a valid Channel name");
   };
+
+  const customSortChannels = (a, b) => {
+    const dateA = new Date(a.createdDate);
+    const dateB = new Date(b.createdDate);
+
+    if (dateA > dateB) return 1;
+    else if (dateA < dateB) return -1;
+    return 0;
+  };
+
+  channels.sort(customSortChannels);
 
   useEffect(() => {
     onSnapshot(colRef, (snapshot) => {

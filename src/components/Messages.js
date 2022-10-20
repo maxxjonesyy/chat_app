@@ -34,11 +34,22 @@ const Messages = () => {
     } else return <p className="message__message">{sent.message.message}</p>;
   }
 
+  const customSortMessages = (a, b) => {
+    const dateA = new Date(a.message.timeSent);
+    const dateB = new Date(b.message.timeSent);
+
+    if (dateA > dateB) return 1;
+    else if (dateA < dateB) return -1;
+    return 0;
+  };
+
   useEffect(() => {
     onSnapshot(colRef, (snapshot) => {
       setMessages(snapshot.docs.map((doc) => doc.data()));
     });
   }, [activeChannel]);
+
+  messages.sort(customSortMessages);
 
   return (
     <div id="messages">
