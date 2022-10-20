@@ -1,5 +1,6 @@
 @import "./theme.scss";
 @import "./mixins.scss";
+@import "./breakpoints.scss";
 
 #home {
   display: flex;
@@ -16,11 +17,37 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 275px;
+  width: 275px;
   background-color: $backgroundLight;
+
+  @media screen and (max-width: $tablet) {
+    position: absolute;
+    height: 100vh;
+    z-index: 10;
+  }
+}
+
+.toggleSidebar {
+  position: relative;
+  z-index: 11;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+
+  span {
+    font-size: 26px;
+    color: $text;
+    z-index: 11;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+    }
+  }
 }
 
 #header {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: $background;
@@ -184,15 +211,19 @@
   position: relative;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
   gap: 10px;
 }
 
 .channel-help__icon {
-  color: rgb(129, 129, 129);
+  position: relative;
+  z-index: 11;
+  color: $text;
+  top: 4.1px;
 
   &:hover {
     cursor: pointer;
+    color: white;
   }
 }
 
@@ -202,9 +233,10 @@
   width: 250px;
   height: 250px;
   right: 0;
-  top: 30px;
+  top: 40px;
   border-radius: 5px;
-  z-index: 4;
+  z-index: 11;
+  box-shadow: 0 0 4px black;
 }
 
 .channel-help__info {
@@ -304,7 +336,11 @@
 }
 
 .message__messageImage {
-  max-width: 50%;
+  max-width: 60%;
   display: inherit;
   padding-top: 5px;
+
+  @media screen and (max-width: $tablet) {
+    max-width: 80%;
+  }
 }

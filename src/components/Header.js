@@ -5,6 +5,25 @@ import HelpIcon from "@mui/icons-material/Help";
 
 const Header = () => {
   const { activeChannel, channels } = useContext(DataContext);
+  const sidebar = document.getElementById("sidebar");
+
+  const handleHamburgerToggle = () => {
+    if (sidebar.style.display === "flex") {
+      sidebar.style.display = "none";
+    } else {
+      sidebar.style.display = "flex";
+      sidebar.style.width = "100%";
+    }
+  };
+
+  window.addEventListener("resize", () => {
+    if (document.documentElement.clientWidth > 768) {
+      sidebar.style.display = "flex";
+      sidebar.style.width = "275px";
+    } else {
+      sidebar.style.display = "none";
+    }
+  });
 
   const handleRulesPopup = () => {
     const channelHelpModal = document.querySelector(".channel-help__modal");
@@ -24,6 +43,9 @@ const Header = () => {
         </span>
 
         <div className="channel-help__container">
+          <div className="toggleSidebar" onClick={handleHamburgerToggle}>
+            <span>&#9776;</span>
+          </div>
           <div className="channel-help__icon" onClick={handleRulesPopup}>
             <HelpIcon />
           </div>
