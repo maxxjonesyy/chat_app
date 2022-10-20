@@ -20,6 +20,23 @@ const Login = () => {
 
   return (
     <div id="login">
+      <div class="context">
+        <div class="area">
+          <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <h1>Maxcord</h1>
       <Button className="login-btn" variant="contained" onClick={googleSignIn}>
         Login
       </Button>
