@@ -20,12 +20,7 @@ const Messages = () => {
 
     if (test === true) {
       return (
-        <img
-          className="message__messageImage"
-          src={sent.message.message}
-          href={sent.message.message}
-          alt="user sent image"
-        ></img>
+        <img className="message__messageImage" src={sent.message.message}></img>
       );
     } else if (
       (test === false) &
