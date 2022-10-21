@@ -22,8 +22,8 @@
 
   @media screen and (max-width: $tablet) {
     position: absolute;
-    height: 100%;
     width: 100%;
+    height: 100vh;
     z-index: 10;
   }
 }
@@ -31,6 +31,7 @@
 .toggleSidebar {
   position: relative;
   z-index: 11;
+
   @media screen and (min-width: $tablet) {
     display: none;
   }
