@@ -22,7 +22,8 @@
 
   @media screen and (max-width: $tablet) {
     position: absolute;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     z-index: 10;
   }
 }
