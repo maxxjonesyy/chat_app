@@ -20,9 +20,9 @@ const Login = () => {
 
   return (
     <div id="login">
-      <div class="context">
-        <div class="area">
-          <ul class="circles">
+      <div className="context">
+        <div className="area">
+          <ul className="circles">
             <li></li>
             <li></li>
             <li></li>

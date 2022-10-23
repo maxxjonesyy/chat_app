@@ -12,3 +12,8 @@
     width: 0px;
   }
 }
+
+html,
+body {
+  height: var(--doc-height);
+}

@@ -4,7 +4,7 @@
 
 #home {
   display: flex;
-  height: 100vh;
+  height: var(--doc-height);
 }
 
 .home__flex-vertical {
@@ -23,7 +23,7 @@
   @media screen and (max-width: $tablet) {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: 10;
   }
 }

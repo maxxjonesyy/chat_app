@@ -10,6 +10,13 @@ const App = () => {
   const [activeChannel, setActiveChannel] = useState("Wade Lane");
   const [messages, setMessages] = useState([]);
 
+  const documentHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+  };
+
+  window.addEventListener("resize", documentHeight);
+
   return (
     <DataContext.Provider
       value={{

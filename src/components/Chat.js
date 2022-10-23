@@ -43,6 +43,7 @@ const Chat = () => {
         />
         <div className="emoji__container hide">
           <EmojiPicker
+            lazyLoadEmojis="true"
             theme="dark"
             onEmojiClick={(res) => {
               const chatInput = document.querySelector(".chat__input");
