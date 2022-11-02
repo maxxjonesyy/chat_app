@@ -33,25 +33,25 @@ const Chat = () => {
   };
 
   return (
-    <div id="chat">
-      <div className="chat__container">
+    <div id='chat'>
+      <div className='chat__container'>
         <input
-          className="chat__input"
-          type="text"
-          placeholder="Message"
+          className='chat__input'
+          type='text'
+          placeholder='Message'
           onKeyDown={handleKeyDown}
         />
-        <div className="emoji__container hide">
+        <div className='emoji__container hide'>
           <EmojiPicker
-            lazyLoadEmojis="true"
-            theme="dark"
+            lazyLoadEmojis='true'
+            theme='dark'
             onEmojiClick={(res) => {
               const chatInput = document.querySelector(".chat__input");
               chatInput.value = chatInput.value + `${res.emoji}`;
             }}
           />
         </div>
-        <EmojiEmotionsIcon className="emoji__icon" onClick={handleEmojiPopup} />
+        <EmojiEmotionsIcon className='emoji__icon' onClick={handleEmojiPopup} />
       </div>
     </div>
   );
