@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { DataContext } from "./logic/context";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import documentHeight from "./logic/document";
 import "./styles/sass/app.scss";
 
 const App = () => {
@@ -10,11 +11,7 @@ const App = () => {
   const [activeChannel, setActiveChannel] = useState("Wade Lane");
   const [messages, setMessages] = useState([]);
 
-  const documentHeight = () => {
-    const doc = document.documentElement;
-    doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
-  };
-
+  documentHeight();
   window.addEventListener("resize", documentHeight);
 
   return (
