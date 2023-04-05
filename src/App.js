@@ -6,7 +6,8 @@ import documentHeight from "./logic/document";
 import "./styles/sass/app.scss";
 
 const App = () => {
-  const [user, setUser] = useState();
+  const localUser = JSON.parse(localStorage.getItem("user"));
+  const [user, setUser] = useState(localUser);
   const [channels, setChannels] = useState([]);
   const [activeChannel, setActiveChannel] = useState("Wade Lane");
   const [messages, setMessages] = useState([]);
@@ -27,7 +28,7 @@ const App = () => {
         setMessages,
       }}
     >
-      {user !== undefined ? <Home /> : <Login />}
+      {!localUser || !user ? <Login /> : <Home />}
     </DataContext.Provider>
   );
 };
