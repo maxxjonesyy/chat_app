@@ -1,6 +1,6 @@
 About 
 ---
-I wanted to create a Chat-app, in that nature it needed to send and receive data in real-time. I used react context api to pass data around the app and firebase to authenticate users and store messages, users, and channel information. It was a great challenge and i'm very pleased with the current state, i will continue to update and add features down the road.
+I wanted to create a Chat-app, in that nature it needed to send and receive data in real-time. I used react context api to pass data around the app and firebase to authenticate users and store messages, users, and channel information. It was a great challenge and I'm very pleased with the current state, I will continue to update and add features down the road.
 
 Technologies 
 ---
