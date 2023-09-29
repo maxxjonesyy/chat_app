@@ -12,5 +12,5 @@ I wanted to create a chat app, in that nature, it needed to send and receive dat
 * Firebase & Firebase-AUTH
 
 ## Screenshots
-<img src="https://user-images.githubusercontent.com/73814371/197086622-bb9ffbed-b9b7-472c-a6f4-5518420c836a.png" width="750">
-<img src="https://user-images.githubusercontent.com/73814371/197086632-a4f75c80-1f64-462e-bbf2-9e69e5a886bf.png" width="750">
+<img src="https://github.com/maxxjonesyy/chat_app/assets/73814371/06951b99-1e5e-42b6-8f91-cec1aeba30d5">
+
