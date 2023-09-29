@@ -22,23 +22,11 @@ const Login = () => {
 
   return (
     <div id='login'>
-      <div className='context'>
-        <div className='area'>
-          <ul className='circles'>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
+      <div className='background-container'>
+        <img className='background' src='background-image.jpg' />
       </div>
-      <h1>Maxcord</h1>
+
+      <h1 className='login-heading'>Maxcord</h1>
       <Button className='login-btn' variant='contained' onClick={googleSignIn}>
         Login
       </Button>
