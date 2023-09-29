@@ -6,6 +6,7 @@ import { DataContext } from "../logic/context";
 import AddIcon from "@mui/icons-material/Add";
 import ChatIcon from "@mui/icons-material/Chat";
 import LogoutIcon from "@mui/icons-material/Logout";
+import Swal from "sweetalert2";
 
 const Sidebar = () => {
   const colRef = collection(db, "channels");
@@ -20,8 +21,14 @@ const Sidebar = () => {
     setActiveChannel(e.target.innerHTML);
   };
 
-  const addChannel = () => {
-    let channelName = prompt("Enter a Channel name less than 20 characters");
+  const addChannel = async () => {
+    const { value: channelName } = await Swal.fire({
+      title: "Enter a Channel name",
+      input: "text",
+      inputLabel: "Maximum 20 characters",
+      confirmButtonColor: "#282b30",
+    });
+
     if (
       (channelName !== null) &
       (channelName !== "") &
