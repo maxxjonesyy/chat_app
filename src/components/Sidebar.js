@@ -41,7 +41,12 @@ const Sidebar = () => {
           timeZone: "Australia/Sydney",
         }),
       });
-    } else alert("You must enter a valid Channel name");
+    } else
+      Swal.fire({
+        icon: "error",
+        text: "You must enter a valid Channel name",
+        confirmButtonColor: "#282b30",
+      });
   };
 
   const customSortChannels = (a, b) => {
